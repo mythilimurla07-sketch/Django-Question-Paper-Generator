@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Generated Question Paper</title>
+    <link rel="stylesheet" href="{% static 'questions/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<div class="card">
+
+    <h1>QUESTION PAPER</h1>
+
+    {% if questions %}
+
+        <div class="paper-header">
+
+    <h2>ADITYA COLLEGE OF ENGINEERING AND TECHNOLOGY</h2>
+
+    <h3>QUESTION PAPER</h3>
+
+    <p>
+        <strong>Department:</strong>
+        {{ request.POST.department }}
+    </p>
+
+            <p>
+                <strong>Subject:</strong>
+                {{ request.POST.subject }}
+            </p>
+
+            <p>
+                <strong>Unit:</strong>
+                {{ request.POST.unit }}
+            </p>
+
+            <p>
+                <strong>Difficulty:</strong>
+                {{ request.POST.difficulty }}
+            </p>
+
+            <p>
+                <strong>Marks:</strong>
+                {{ request.POST.marks }}
+            </p>
+
+        </div>
+
+        <hr>
+
+        <h2>Questions</h2>
+
+        <ol>
+
+            {% for question in questions %}
+
+                <li class="question-box">
+
+                    <strong>
+                        {{ question.question_text }}
+                    </strong>
+
+                    <p>
+                        <strong>Marks:</strong>
+                        {{ question.marks }}
+                    </p>
+
+                </li>
+
+            {% endfor %}
+
+        </ol>
+
+        <hr>
+
+        <p>
+            <strong>Total Questions:</strong>
+            {{ questions|length }}
+        </p>
+
+    {% else %}
+
+        <h2>Generate Question Paper</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <p>
+                <label>Department</label><br>
+
+                <select name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">CSE</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="AIML">AIML</option>
+                    <option value="ECE">ECE</option>
+                    <option value="MEC">MEC</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Subject</label><br>
+
+                <input
+                    type="text"
+                    name="subject"
+                    placeholder="Enter subject"
+                    required
+                >
+            </p>
+
+            <p>
+                <label>Unit</label><br>
+
+                <select name="unit" required>
+                    <option value="">Select Unit</option>
+                    <option value="Unit 1">Unit 1</option>
+                    <option value="Unit 2">Unit 2</option>
+                    <option value="Unit 3">Unit 3</option>
+                    <option value="Unit 4">Unit 4</option>
+                    <option value="Unit 5">Unit 5</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Difficulty</label><br>
+
+                <select name="difficulty" required>
+                    <option value="">Select Difficulty</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Marks</label><br>
+
+                <select name="marks" required>
+                    <option value="">Select Marks</option>
+                    <option value="2">2 Marks</option>
+                    <option value="4">4 Marks</option>
+                    <option value="8">8 Marks</option>
+                </select>
+            </p>
+
+            <button class="btn" type="submit">
+                Generate Question Paper
+            </button>
+
+        </form>
+
+    {% endif %}
+
+    <br>
+
+    <button onclick="window.print()" class="btn">
+    Print Question Paper
+    </button>
+
+    <a href="/" class="btn">
+        Back to Dashboard
+    </a>
+
+</div>
+```
+
+</div>
+
+</body>
+</html>

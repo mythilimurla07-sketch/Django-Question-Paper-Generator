@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Paper Generator</title>
+
+    <link rel="stylesheet" href="{% static 'questions/style.css' %}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+    <div class="logo">
+        <h2>Question Paper</h2>
+        <h2>Generator</h2>
+    </div>
+
+    <div class="menu">
+
+        <a href="/">
+            🏠 Dashboard
+        </a>
+
+            <a href="/view-questions/">
+                📋 View Questions
+            </a>
+
+            <a href="/add-question/">
+                ➕ Add Questions
+            </a>
+
+            <a href="/generate-question-paper/">
+                ⚙️ Generate Questions
+            </a>
+
+            <a href="/generate-question-paper/">
+                📄 Generate Question Paper
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <a href="/logout/">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <div class="top-bar">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome to the Question Paper Generator</p>
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📋
+                </div>
+
+                <h3>View Questions</h3>
+
+                <p>
+                    View all questions stored in the database.
+                </p>
+
+                <a href="/view-questions/" class="dashboard-btn">
+                    View Questions
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ➕
+                </div>
+
+                <h3>Add Questions</h3>
+
+                <p>
+                    Add new questions with department,
+                    unit, difficulty and marks.
+                </p>
+
+                <a href="/add-question/" class="dashboard-btn">
+                    Add Question
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ⚙️
+                </div>
+
+                <h3>Generate Questions</h3>
+
+                <p>
+                    Select criteria and generate questions
+                    randomly.
+                </p>
+
+                <a href="/generate-question-paper/" class="dashboard-btn">
+                    Generate
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📄
+                </div>
+
+                <h3>Generate Question Paper</h3>
+
+                <p>
+                    Create and print a question paper
+                    from your question database.
+                </p>
+
+                <a href="/generate-question-paper/" class="dashboard-btn">
+                    Generate Paper
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

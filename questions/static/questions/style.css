@@ -1,0 +1,320 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #1f3c88;
+}
+
+h2 {
+    color: #333;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 220px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #1f3c88;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1f3c88;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #14295f;
+}
+
+.logout {
+    margin-top: 30px;
+}
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+select,
+textarea {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    resize: vertical;
+}
+.question-box {
+    background-color: #f8f9fc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: left;
+    border-left: 5px solid #1f3c88;
+}
+
+.question-box h3 {
+    color: #1f3c88;
+}
+
+.question-box p {
+    margin: 8px 0;
+}
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .card {
+        box-shadow: none;
+        border: none;
+    }
+
+    .question-box {
+        border-left: none;
+        border-bottom: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    h1 {
+        color: black;
+    }
+
+}
+/* ============================= */
+/* DASHBOARD DESIGN */
+/* ============================= */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7fb;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 240px;
+    background-color: #1f3c88;
+    color: white;
+    padding: 25px 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: white;
+    margin: 3px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.menu {
+    margin-top: 40px;
+}
+
+.menu a,
+.sidebar-bottom a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 15px;
+    margin-bottom: 8px;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.menu a:hover,
+.sidebar-bottom a:hover {
+    background-color: #14295f;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+
+/* Top Bar */
+
+.top-bar {
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.top-bar h1 {
+    margin: 0;
+    color: #1f3c88;
+    font-size: 30px;
+}
+
+.top-bar p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* Dashboard Cards */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.dashboard-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card h3 {
+    color: #1f3c88;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: #666;
+    line-height: 1.5;
+    min-height: 45px;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background-color: #1f3c88;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.dashboard-btn:hover {
+    background-color: #14295f;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menu {
+        margin-top: 20px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
+/* ============================= */
+/* PROFESSIONAL SIDEBAR */
+/* ============================= */
+
+.logo {
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.logo h2 {
+    margin: 3px 0;
+    font-size: 20px;
+}
+
+.menu a {
+    transition: all 0.2s ease;
+}
+
+.menu a:hover {
+    padding-left: 20px;
+}
+
+.menu a:first-child {
+    background-color: rgba(255,255,255,0.15);
+}
+
+.sidebar-bottom a {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 18px;
+}

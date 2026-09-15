@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Edit Question</title>
+
+    <link rel="stylesheet"
+          href="{% static 'questions/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Question Paper Generator</h1>
+
+    <div class="card">
+
+        <h2>Edit Question</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <p>
+                <label>Department</label><br>
+
+                <select name="department" required>
+
+                    <option value="CSE"
+                        {% if question.department == "CSE" %}selected{% endif %}>
+                        CSE
+                    </option>
+
+                    <option value="Data Science"
+                        {% if question.department == "Data Science" %}selected{% endif %}>
+                        Data Science
+                    </option>
+
+                    <option value="AIML"
+                        {% if question.department == "AIML" %}selected{% endif %}>
+                        AIML
+                    </option>
+
+                    <option value="ECE"
+                        {% if question.department == "ECE" %}selected{% endif %}>
+                        ECE
+                    </option>
+
+                    <option value="MEC"
+                        {% if question.department == "MEC" %}selected{% endif %}>
+                        MEC
+                    </option>
+
+                </select>
+            </p>
+
+
+            <p>
+
+                <label>Subject</label><br>
+
+                <input
+                    type="text"
+                    name="subject"
+                    value="{{ question.subject }}"
+                    required
+                >
+
+            </p>
+
+
+            <p>
+
+                <label>Unit</label><br>
+
+                <select name="unit" required>
+
+                    <option value="Unit 1"
+                        {% if question.unit == "Unit 1" %}selected{% endif %}>
+                        Unit 1
+                    </option>
+
+                    <option value="Unit 2"
+                        {% if question.unit == "Unit 2" %}selected{% endif %}>
+                        Unit 2
+                    </option>
+
+                    <option value="Unit 3"
+                        {% if question.unit == "Unit 3" %}selected{% endif %}>
+                        Unit 3
+                    </option>
+
+                    <option value="Unit 4"
+                        {% if question.unit == "Unit 4" %}selected{% endif %}>
+                        Unit 4
+                    </option>
+
+                    <option value="Unit 5"
+                        {% if question.unit == "Unit 5" %}selected{% endif %}>
+                        Unit 5
+                    </option>
+
+                </select>
+
+            </p>
+
+
+            <p>
+
+                <label>Difficulty</label><br>
+
+                <select name="difficulty" required>
+
+                    <option value="Easy"
+                        {% if question.difficulty == "Easy" %}selected{% endif %}>
+                        Easy
+                    </option>
+
+                    <option value="Medium"
+                        {% if question.difficulty == "Medium" %}selected{% endif %}>
+                        Medium
+                    </option>
+
+                    <option value="Hard"
+                        {% if question.difficulty == "Hard" %}selected{% endif %}>
+                        Hard
+                    </option>
+
+                </select>
+
+            </p>
+
+
+            <p>
+
+                <label>Marks</label><br>
+
+                <select name="marks" required>
+
+                    <option value="2"
+                        {% if question.marks == 2 %}selected{% endif %}>
+                        2 Marks
+                    </option>
+
+                    <option value="4"
+                        {% if question.marks == 4 %}selected{% endif %}>
+                        4 Marks
+                    </option>
+
+                    <option value="8"
+                        {% if question.marks == 8 %}selected{% endif %}>
+                        8 Marks
+                    </option>
+
+                </select>
+
+            </p>
+
+
+            <p>
+
+                <label>Question</label><br>
+
+                <textarea
+                    name="question_text"
+                    rows="5"
+                    required
+                >{{ question.question_text }}</textarea>
+
+            </p>
+
+
+            <button class="btn" type="submit">
+                Update Question
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="{% url 'view_questions' %}" class="btn">
+            Cancel
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

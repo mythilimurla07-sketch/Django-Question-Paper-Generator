@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Question</title>
+
+    <link rel="stylesheet" href="{% static 'questions/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Question Paper Generator</h1>
+
+    <div class="card">
+
+        <h2>Add Question</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <p>
+                <label>Department</label><br>
+                <select name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">CSE</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="AIML">AIML</option>
+                    <option value="ECE">ECE</option>
+                    <option value="MEC">MEC</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Subject</label><br>
+                <input type="text" name="subject" required>
+            </p>
+
+            <p>
+                <label>Unit</label><br>
+                <select name="unit" required>
+                    <option value="">Select Unit</option>
+                    <option value="Unit 1">Unit 1</option>
+                    <option value="Unit 2">Unit 2</option>
+                    <option value="Unit 3">Unit 3</option>
+                    <option value="Unit 4">Unit 4</option>
+                    <option value="Unit 5">Unit 5</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Difficulty</label><br>
+                <select name="difficulty" required>
+                    <option value="">Select Difficulty</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Marks</label><br>
+                <select name="marks" required>
+                    <option value="">Select Marks</option>
+                    <option value="2">2 Marks</option>
+                    <option value="4">4 Marks</option>
+                    <option value="8">8 Marks</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Question</label><br>
+                <textarea
+                    name="question_text"
+                    rows="5"
+                    required
+                    placeholder="Enter your question here..."
+                ></textarea>
+            </p>
+
+            <button class="btn" type="submit">
+                Add Question
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="/" class="btn">Back to Dashboard</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Question Paper Generator</title>
+
+    <link rel="stylesheet" href="{% static 'questions/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Question Paper Generator</h1>
+
+    <div class="card">
+
+        <h2>Login</h2>
+
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <p>
+                <label>Username</label><br>
+                <input type="text" name="username" required>
+            </p>
+
+            <p>
+                <label>Password</label><br>
+                <input type="password" name="password" required>
+            </p>
+
+            <button class="btn" type="submit">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
